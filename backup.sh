@@ -15,7 +15,7 @@ echo '|--------------------------|'
 echo ''
 echo 'Copiando Documentos...'
 echo ''
-sudo rsync -acv -progress --exclude 'Analytics?-?Pint?of?Science' --exclude 'Analytics?-?Pint?of?Science.zip' --exclude 'imagem' --exclude 'Curso-ReactJS' --exclude 'Curso-React-Native'  /home/guilherme/Documentos/ /mnt/HD-guilherme/Backup/Linux/Documentos
+sudo rsync -acv -progress /home/guilherme/Documentos/Backup /mnt/HD-guilherme/Backup/Linux/Documentos
 echo ''
 echo 'Copiando Downloads...'
 echo ''
