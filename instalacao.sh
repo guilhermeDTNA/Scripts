@@ -44,6 +44,17 @@ sudo apt-get install -y pinta
 
 
 echo "---------------"
+echo "Instalando o Sublime Text 3"
+echo "---------------"
+
+sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
+
+
+
+echo "---------------"
 echo "Instalando o Docker"
 echo "---------------"
 
@@ -68,6 +79,13 @@ sudo apt-key add winehq.key
 sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
 sudo apt update && sudo apt install --install-recommends winehq-stable
 
+
+#Caso não dê certo os comandos acima, tente esses:
+
+#wget -nc https://dl.winehq.org/wine-builds/winehq.key
+#sudo apt-key add winehq.key
+#sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/
+#sudo apt install --install-recommends winehq-stable
 
 echo "---------------"
 echo "Instalando o Lamp"
