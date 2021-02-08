@@ -26,6 +26,14 @@ sudo dpkg -i 4kvideodownloader_4.14.2-1_amd64.deb
 
 
 echo "---------------"
+echo "Instalando o Winff"
+echo "---------------"
+
+
+sudo apt install -y winff
+
+
+echo "---------------"
 echo "Instalando o Vokoscreen"
 echo "---------------"
 
