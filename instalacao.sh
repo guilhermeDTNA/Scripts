@@ -9,7 +9,6 @@ echo "---------------"
 echo "Instalando o Virtualbox"
 echo "---------------"
 
-
 cd ~/Downloads
 sudo chmod 777 virtualbox-6.1_6.1.18-142142~Ubuntu~bionic_amd64.deb
 sudo dpkg -i virtualbox-6.1_6.1.18-142142~Ubuntu~bionic_amd64.deb
@@ -18,7 +17,6 @@ sudo dpkg -i virtualbox-6.1_6.1.18-142142~Ubuntu~bionic_amd64.deb
 echo "---------------"
 echo "Instalando o 4kdownloader"
 echo "---------------"
-
 
 cd ~/Downloads
 sudo chmod 777 4kvideodownloader_4.14.2-1_amd64.deb
@@ -29,14 +27,12 @@ echo "---------------"
 echo "Instalando o Winff"
 echo "---------------"
 
-
 sudo apt install -y winff
 
 
 echo "---------------"
 echo "Instalando o Vokoscreen"
 echo "---------------"
-
 
 sudo apt update
 sudo apt install -y vokoscreen
@@ -61,11 +57,9 @@ sudo apt-get update
 sudo apt-get install sublime-text
 
 
-
 echo "---------------"
 echo "Instalando o Docker"
 echo "---------------"
-
 
 sudo apt update
 sudo apt upgrade
@@ -80,7 +74,6 @@ sudo systemctl status docker
 echo "---------------"
 echo "Instalando o Wine"
 echo "---------------"
-
 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
@@ -104,6 +97,15 @@ sudo apt-get install -y apache2 mysql-server php php-mysql libapache2-mod-php
 sudo apt-get install -y phpmyadmin
 sudo echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/test.php
 sudo /etc/init.d/apache2 restart
+
+
+echo "---------------"
+echo "Instalando pacotes do Latex"
+echo "---------------"
+
+sudo apt install -y texlive-latex-extra
+sudo apt-get install -y texlive-full
+
 
 echo "---------------"
 echo "Instalando o Kile"
@@ -130,11 +132,9 @@ sudo chmod 777 jdk-8u111-nb-8_2-linux-x64.sh
 ./jdk-8u111-nb-8_2-linux-x64.sh
 
 
-
 echo "---------------"
 echo "Instalando o Dropbox"
 echo "---------------"
-
 
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ~/.dropbox-dist/dropboxd
@@ -145,7 +145,6 @@ sudo chmod 777 ~/dropbox.sh
 echo "---------------"
 echo "Instalando o Chrome"
 echo "---------------"
-
 
 cd ~/Downloads
 sudo chmod 777 google-chrome-stable_current_amd64.deb
