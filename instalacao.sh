@@ -15,6 +15,15 @@ sudo dpkg -i virtualbox-6.1_6.1.18-142142~Ubuntu~bionic_amd64.deb
 
 
 echo "---------------"
+echo "Instalando o Mendeley desktop"
+echo "---------------"
+
+wget https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest.deb
+sudo apt-get install -y gconf2
+sudo dpkg -i mendeleydesktop-latest.deb
+
+
+echo "---------------"
 echo "Instalando o 4kdownloader"
 echo "---------------"
 
