@@ -158,3 +158,43 @@ echo "---------------"
 cd ~/Downloads
 sudo chmod 777 google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+
+echo "---------------"
+echo "Instalando o Nodejs, npm e React Native"
+echo "---------------"
+
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt update
+sudo apt install -y openjdk-8-jdk
+sudo apt update
+sudo apt install -y nodejs
+sudo npm install -g n
+sudo apt install -y npm
+sudo apt install -y autoconf automake build-essential libtool pkg-config libssl-dev python-dev
+sudo npm install -g react-native-cli
+npm install --save --save-exact react-native
+
+
+echo "---------------"
+echo "Instalando o Android Studio"
+echo "---------------"
+
+sudo snap install -y android-studio --classic
+sudo apt-get install -y lib32z1 lib32ncurses5 lib32stdc++6
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+sudo apt install -y autoconf automake build-essential libtool pkg-config libssl-dev python-dev
+echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
+echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
+echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+watchman shutdown-server
+sudo chmod 777 /dev/kvm
+
+
+echo "---------------"
+echo "Instalando o Expo"
+echo "---------------"
+
+sudo npm install --global expo-cli
