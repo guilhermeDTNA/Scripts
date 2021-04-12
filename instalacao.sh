@@ -18,6 +18,21 @@ sudo apt-get install -y insomnia
 
 
 echo "---------------"
+echo "Instalando o Gnome-Tweak" #para exibição da data completa no painel superior
+echo "---------------"
+
+sudo apt install -y gnome-tweak-tool
+
+
+echo "---------------"
+echo "Instalando o Jupyter"
+echo "---------------"
+
+sudo apt install -y jupyter-notebook
+
+
+
+echo "---------------"
 echo "Instalando o Virtualbox"
 echo "---------------"
 
