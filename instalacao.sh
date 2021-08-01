@@ -9,12 +9,7 @@ echo "---------------"
 echo "Instalando o Insomnia"
 echo "---------------"
 
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
-    | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install -y insomnia
+#Download manual
 
 
 echo "---------------"
@@ -105,6 +100,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt install -y docker-ce
 sudo systemctl status docker
+sudo apt  install docker-compose
 
 
 echo "---------------"
