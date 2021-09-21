@@ -107,18 +107,31 @@ echo "---------------"
 echo "Instalando o Wine"
 echo "---------------"
 
+#Opção 1
+wget -nc https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+
+#Substitua artful pelo nome do SO: https://wiki.ubuntu.com/DevelopmentCodeNames
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ artful main' 
+
+sudo apt-get update
+sudo apt-get install -y --install-recommends winehq-stable
+
+
+#Opção 2
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
 sudo apt update && sudo apt install --install-recommends winehq-stable
 
 
-#Caso não dê certo os comandos acima, tente esses:
-
+#Opção 3
 #wget -nc https://dl.winehq.org/wine-builds/winehq.key
 #sudo apt-key add winehq.key
 #sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/
 #sudo apt install --install-recommends winehq-stable
+
+
 
 echo "---------------"
 echo "Instalando o Lamp"
@@ -153,6 +166,7 @@ sudo apt-get install -y texlive-plain-extra
 sudo apt-get install -y latex-beamer
 sudo apt-get install -y texlive-publishers texlive-science
 sudo apt-get install -y okular
+sudo apt-get install -y aspell-pt-br
 
 
 echo "---------------"
