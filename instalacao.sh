@@ -9,7 +9,8 @@ echo "---------------"
 echo "Instalando o Insomnia"
 echo "---------------"
 
-#Download manual
+#Link: https://insomnia.rest/download
+sudo dpkg -i Insomnia.Core-2021.7.2.deb
 
 
 echo "---------------"
@@ -20,19 +21,10 @@ sudo apt install -y gnome-tweak-tool
 
 
 echo "---------------"
-echo "Instalando o Jupyter"
-echo "---------------"
-
-sudo apt install -y jupyter-notebook
-
-
-
-echo "---------------"
 echo "Instalando o Virtualbox"
 echo "---------------"
 
-cd ~/Downloads
-sudo chmod 777 virtualbox-6.1_6.1.18-142142~Ubuntu~bionic_amd64.deb
+#Link: https://www.virtualbox.org/wiki/Linux_Downloads
 sudo dpkg -i virtualbox-6.1_6.1.18-142142~Ubuntu~bionic_amd64.deb
 
 
@@ -49,8 +41,7 @@ echo "---------------"
 echo "Instalando o 4kdownloader"
 echo "---------------"
 
-cd ~/Downloads
-sudo chmod 777 4kvideodownloader_4.14.2-1_amd64.deb
+#Link: https://www.4kdownload.com/pt-br/products/product-videodownloader
 sudo dpkg -i 4kvideodownloader_4.14.2-1_amd64.deb
 
 
@@ -85,7 +76,7 @@ echo "---------------"
 sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
-sudo apt-get install sublime-text
+sudo apt-get install -y sublime-text
 
 
 echo "---------------"
@@ -104,6 +95,13 @@ sudo apt  install docker-compose
 
 
 echo "---------------"
+echo "Instalando o Jupyter"
+echo "---------------"
+
+sudo apt install -y jupyter-notebook
+
+
+echo "---------------"
 echo "Instalando o Wine"
 echo "---------------"
 
@@ -119,18 +117,7 @@ sudo apt-get install -y --install-recommends winehq-stable
 
 
 #Opção 2
-wget -nc https://dl.winehq.org/wine-builds/winehq.key
-sudo apt-key add winehq.key
-sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-sudo apt update && sudo apt install --install-recommends winehq-stable
-
-
-#Opção 3
-#wget -nc https://dl.winehq.org/wine-builds/winehq.key
-#sudo apt-key add winehq.key
-#sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/
-#sudo apt install --install-recommends winehq-stable
-
+sudo apt install -y wine-stable
 
 
 echo "---------------"
@@ -142,6 +129,25 @@ sudo apt-get install -y apache2 mysql-server php php-mysql libapache2-mod-php
 sudo apt-get install -y phpmyadmin
 sudo echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/test.php
 sudo /etc/init.d/apache2 restart
+
+
+echo "---------------"
+echo "Instalando o Git"
+echo "---------------"
+
+sudo apt-get install -y git
+
+
+echo "---------------"
+echo "Instalando o Smartgit"
+echo "---------------"
+
+#Link: https://www.syntevo.com/smartgit/download/
+#Talvez precise disso: sudo apt install libcurl4
+tar -xf smartgit-linux-21_2_0.tar.gz
+sudo mv smartgit/ /opt/
+echo "[Desktop Entry]" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Type=Application" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Version=21.2.0" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Name=Smartgit" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Comment=Gerenciador de repositórios Git" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Icon=/opt/smartgit/bin/smartgit-64.png" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Exec=/opt/smartgit/bin/smartgit.sh" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Terminal=false" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "StartupNotify=false" >> /home/guilherme/.local/share/applications/smartgit.desktop && echo "Categories=Development;" >> /home/guilherme/.local/share/applications/smartgit.desktop
+sudo chmod 777 /home/guilherme/.local/share/applications/smartgit.desktop 
 
 
 echo "---------------"
@@ -173,7 +179,7 @@ echo "---------------"
 echo "Instalando o NetBeans"
 echo "---------------"
 
-cd ~/Downloads
+wget -nc https://archive.org/download/jdk-8u111-nb-8_2/jdk-8u111-nb-8_2-linux-x64.sh
 sudo chmod 777 jdk-8u111-nb-8_2-linux-x64.sh
 ./jdk-8u111-nb-8_2-linux-x64.sh
 
@@ -192,8 +198,7 @@ echo "---------------"
 echo "Instalando o Chrome"
 echo "---------------"
 
-cd ~/Downloads
-sudo chmod 777 google-chrome-stable_current_amd64.deb
+#Link: https://www.google.pt/intl/pt-PT/chrome/?brand=ISCS&gclsrc=aw.ds&gclid=Cj0KCQiAqvaNBhDLARIsAH1Pq51tLtg_ptZ1KBp-VO0kqBkcVsz3ziuPV-XMPm7wQPpRH3eFyV0QFGIaArqPEALw_wcB
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 
@@ -214,6 +219,13 @@ npm install --save --save-exact react-native
 
 
 echo "---------------"
+echo "Instalando o Expo"
+echo "---------------"
+
+sudo npm install --global expo-cli
+
+
+echo "---------------"
 echo "Instalando o Android Studio"
 echo "---------------"
 
@@ -228,10 +240,3 @@ echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
 echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 watchman shutdown-server
 sudo chmod 777 /dev/kvm
-
-
-echo "---------------"
-echo "Instalando o Expo"
-echo "---------------"
-
-sudo npm install --global expo-cli
