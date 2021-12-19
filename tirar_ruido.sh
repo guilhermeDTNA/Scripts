@@ -1,18 +1,17 @@
 #Crie o arquivo:
 
-nano echocancelcom
+nano echocancel
+echo "#!/usr/bin/env bash" >> echocancel
+echo "pactl unload-module module-echo-cancel" >> echocancel
+echo "pactl load-module module-echo-cancel aec_method=webrtc source_name=echocancel sink_name=echocancel1" >> echocancel
+echo "pacmd set-default-source echocancel" >> echocancel
+echo "pacmd set-default-sink echocancel1" >> echocancel
 
-#Cole o seguinte conteúdo em seu interior:
-
-#!/usr/bin/env bash
-pactl unload-module module-echo-cancel
-pactl load-module module-echo-cancel aec_method=webrtc source_name=echocancel sink_name=echocancel1
-pacmd set-default-source echocancel
-pacmd set-default-sink echocancel1
 
 #Instale
 
 sudo install echocancel /usr/local/bin
+
 
 #Crie o script de execução "reduzir_ruido.sh" e cole o seguinte conteúdo:
 
