@@ -1,2 +1,0 @@
-mount /dev/sda2 /mnt/windows
-xdg-open /mnt/windows/Users/Guilherme_2/Documents/UFVJM
