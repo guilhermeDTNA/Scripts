@@ -108,6 +108,9 @@ echo "Instalando o Wine"
 echo "---------------"
 
 #Opção 1
+sudo apt install -y wine-stable
+
+#Opção 2
 wget -nc https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
 
@@ -116,10 +119,6 @@ sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ artful ma
 
 sudo apt-get update
 sudo apt-get install -y --install-recommends winehq-stable
-
-
-#Opção 2
-sudo apt install -y wine-stable
 
 
 echo "---------------"
@@ -224,6 +223,22 @@ echo "Instalando o Expo"
 echo "---------------"
 
 sudo npm install --global expo-cli
+
+
+echo "---------------"
+echo "Instalando/Desinstalando nodeJS, npm e React Native CLI"
+echo "---------------"
+
+#Desinstalando:
+sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* ~/.npm
+sudo rm -rf /usr/local/lib/node*
+sudo rm -rf /usr/local/include/node*
+sudo apt-get purge nodejs npm
+sudo apt autoremove
+
+#Instalando:
+curl -qL https://www.npmjs.com/install.sh | sh #Já logado como root
+sudo npm install -g react-native-cli
 
 
 echo "---------------"
