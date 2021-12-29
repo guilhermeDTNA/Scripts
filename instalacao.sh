@@ -133,10 +133,10 @@ sudo /etc/init.d/apache2 restart
 
 
 echo "---------------"
-echo "Instalando o Git"
+echo "Instalando o NetTools"
 echo "---------------"
 
-sudo apt-get install -y git
+sudo apt-get install net-tools
 
 
 echo "---------------"
