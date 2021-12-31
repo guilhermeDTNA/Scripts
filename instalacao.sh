@@ -104,6 +104,21 @@ sudo apt install -y jupyter-notebook
 
 
 echo "---------------"
+echo "Instalando o Anki"
+echo "---------------"
+
+#Link: https://apps.ankiweb.net/
+tar -xf anki-2.1.49-linux.tar.bz2
+cd anki-2.1.49-linux/
+sudo ./install.sh
+
+#Se em algum momento ocorrer o erro "Sound and video on cards will not function until mpv or mplayer is installed anki", execute os seguintes comandos
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install -y mplayer mplayer-gui
+
+
+echo "---------------"
 echo "Instalando o Wine"
 echo "---------------"
 
