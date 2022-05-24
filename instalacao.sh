@@ -16,6 +16,15 @@ sudo dpkg -i Insomnia.Core-2021.7.2.deb
 
 
 echo "---------------"
+echo "Instalando o Kazam"
+echo "---------------"
+
+sudo add-apt-repository ppa:kazam-team/stable-series
+sudo apt-get update
+sudo apt-get install kazam
+
+
+echo "---------------"
 echo "Instalando o Gnome-Tweak" #para exibição da data completa no painel superior
 echo "---------------"
 
