@@ -40,6 +40,13 @@ sudo dpkg -i virtualbox-6.1_6.1.18-142142~Ubuntu~bionic_amd64.deb
 
 
 echo "---------------"
+echo "Instalando o alsamixergui (software para controle e distribuíção do som no Linux)"
+echo "---------------"
+
+sudo apt install alsamixergui
+
+
+echo "---------------"
 echo "Instalando o Mendeley desktop"
 echo "---------------"
 
